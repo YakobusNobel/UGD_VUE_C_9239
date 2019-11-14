@@ -11,7 +11,7 @@
 
             <v-divider></v-divider>
             <v-list>
-                <v-list-item v-for="item in items" :key="item.title" link>
+                <v-list-item v-for="item in items" :to="item.router" :key="item.title" link>
                     <v-list-item-icon>
                         <v-icon>{{ item.icon }}</v-icon>
                     </v-list-item-icon>
@@ -44,10 +44,18 @@
         data() {
             return {
                 drawer: null,
-                items: [{
-                    title: 'User Controller',
-                    icon: 'mdi-human-male'
-                }, ],
+                items: [
+                    {
+                        title: 'User Controller',
+                        icon: 'mdi-human-male',
+                        router: '/users'
+                    },
+                    {
+                        title: 'Branches Controller',
+                        icon: 'mdi-car',
+                        router: '/branches'
+                    },
+                ],
             }
         },
     }
